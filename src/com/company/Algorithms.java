@@ -1,11 +1,12 @@
 package com.company;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Algorithms {
-    public static ArrayList<Integer> fileDuplicates(){
+    public static ArrayList<Integer> fileDuplicates()throws IOException {
         Scanner file1 = new Scanner(new File("file1.txt"));
         Scanner file2 = new Scanner(new File("file2.txt"));
         ArrayList<Integer> f1 = new ArrayList<Integer>();
@@ -26,7 +27,7 @@ public class Algorithms {
         }
         return ret;
     }
-    public static ArrayList<String> fileDuplicatesTwo(){
+    public static ArrayList<String> fileDuplicatesTwo()throws IOException{
         Scanner names = new Scanner(new File("names.txt"));
        String ori="";
        ArrayList<String> ret= new ArrayList<String>();
@@ -49,8 +50,8 @@ public class Algorithms {
         }
         return ret;
     }
-    public static ArrayList<Integer> orderedList(){
-        Scanner file1 = new Scanner(new File("file1.txt"));
+    public static ArrayList<Integer> orderedList()throws IOException{
+        Scanner file1 = new Scanner(new File("com/company/file1.txt"));
         ArrayList<Integer> list = new ArrayList<Integer>();
         for(int i=1;i<20;i++){
             int cur=file1.nextInt();
