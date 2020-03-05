@@ -1,7 +1,10 @@
+package com.company;
+
 import org.junit.Test;
 
 import java.io.IOException;
 import java.util.ArrayList;
+
 
 import static org.junit.Assert.*;
 
@@ -47,12 +50,12 @@ public class TraversingTest {
         numbers.add(6);
         numbers.add(9);
 
-        assertEquals(numbers, Traversing.largestAndSmallest());
+        assertEquals(numbers, Traversing.largeAndSmallest());
 
     }
 
     @Test
-    public void testRectangleArea() {
+    public void testRectangleArea(){
         ArrayList<Rectangle> r = new ArrayList<>();
         r.add(new Rectangle(5, 6));
         r.add(new Rectangle(2.5, 7.25));
@@ -65,3 +68,4 @@ public class TraversingTest {
 
     }
 }
+

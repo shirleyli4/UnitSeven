@@ -1,3 +1,6 @@
+package com.company;
+
+import com.company.Algorithms;
 import org.junit.Test;
 
 import java.io.IOException;
