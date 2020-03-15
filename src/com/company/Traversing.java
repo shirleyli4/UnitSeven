@@ -11,36 +11,45 @@ public class Traversing {
         Scanner input = new Scanner(System.in);
         ArrayList<String> states = new ArrayList<String>();
         System.out.println("Enter the name of a state or \"Stop\" to quit:");
-        while (input.nextLine() != "Stop") {
-            states.add(input.nextLine());
-        }
+        String cur = input.nextLine();
+        do{
+            states.add(cur);
+        }while(cur.compareTo("Stop")!=0);
         return states;
     }
 
     public static String createList(ArrayList<String> states) {
         String ret = "";
-        for (int i = 0; i < states.size() - 2; i++) {
+        for (int i = 0; i < states.size() - 1; i++) {
             ret += states.get(i) + " -> ";
         }
         ret += states.get(states.size() - 1);
         return ret;
     }
 
-    public static ArrayList<Integer> largeAndSmallest() throws IOException {
+    public static ArrayList<Integer> largeAndSmallest() throws FileNotFoundException {
         Scanner input = new Scanner(new File("numbers.txt"));
         ArrayList<Integer> ret = new ArrayList<Integer>();
         while (input.hasNext()) {
             ret.add(input.nextInt());
         }
+        int big=ret.get(0);
+        int sm=ret.get(0);
         for (int i = 1; i < ret.size(); i++) {
-            int cur = ret.get(i);
-            int index = i - 1;
-            while (index >= 0 && cur < ret.get(index)) {
-                ret.set(index + 1, ret.get(index));
-                index--;
+            if(ret.get(i)>=big){
+                big=ret.get(i);
             }
-            ret.set(index + 1, cur);
+            if(ret.get(i)<=sm){
+                sm=ret.get(i);
+            }
         }
+        for(int i=ret.size()-1;i>=0;i--){
+            if(ret.get(i)==big||ret.get(i)==sm){
+                ret.remove(i);
+            }
+        }
+        ret.add(0,sm);
+        ret.add(big);
         return ret;
     }
 
