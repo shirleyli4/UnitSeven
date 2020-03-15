@@ -12,9 +12,17 @@ public class Traversing {
         ArrayList<String> states = new ArrayList<String>();
         System.out.println("Enter the name of a state or \"Stop\" to quit:");
         String cur = input.nextLine();
-        do{
+
+        if(cur.compareTo("Stop")==0){
+            return states;
+        }
+        else {
             states.add(cur);
-        }while(cur.compareTo("Stop")!=0);
+            System.out.println("Next state or \"Stop\": ");
+            do {
+                states.add(cur);
+            } while (cur.compareTo("Stop") != 0);
+        }
         return states;
     }
 
