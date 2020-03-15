@@ -26,15 +26,21 @@ public class ArrayListMethods {
     }
     public static ArrayList<Double> firstAndLast(){
         System.out.print("Enter your numbers:");
+        ArrayList<Double>ori=new ArrayList<Double>();
         ArrayList<Double>ret=new ArrayList<Double>();
-        while(true){
-            ret.add(input.nextDouble());
-            break;
+        double current=0;
+        double num=0;
+        do{
+            current = input.nextDouble();
+            ori.add(current);
+            num++;
+
         }
-        ret.add(0,(double)(ret.size()));
-        for(int i=2;i<ret.size()-1;i++){
-            ret.remove(i);
-        }
+        while(current!=0);
+
+        ret.add(0,num-1);
+        ret.add(1, ori.get(0));
+        ret.add(2,ori.get(ori.size()-2));
         return ret;
     }
     public static ArrayList<Double> getNumbers(){
