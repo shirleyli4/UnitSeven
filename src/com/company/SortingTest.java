@@ -1,4 +1,4 @@
-/* package com.company;
+package com.company;
 import org.junit.Test;
 
 import java.io.File;
@@ -71,4 +71,4 @@ public class SortingTest {
 
     }
 }
-*/
+
